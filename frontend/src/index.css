@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-midnight text-cream font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-midnight;
+  }
+
+  ::selection {
+    @apply bg-gold text-midnight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-midnight;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gold rounded-full;
+}
+
+/* Zulu beadwork-inspired divider */
+.zulu-divider {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #d4af37,
+    #d4af37 20px,
+    #0b132b 20px,
+    #0b132b 40px
+  );
+}
+
+/* Geometric beadwork texture used behind section headings */
+.zulu-pattern {
+  background-image:
+    linear-gradient(135deg, rgba(212, 175, 55, 0.14) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(212, 175, 55, 0.14) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(90, 125, 124, 0.12) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(90, 125, 124, 0.12) 25%, transparent 25%);
+  background-position:
+    12px 0,
+    12px 0,
+    0 0,
+    0 0;
+  background-size: 24px 24px;
+  background-repeat: repeat;
+}
+
+/* Hero ambience: slow-drifting gradient light */
+.hero-aurora {
+  background:
+    radial-gradient(60% 60% at 20% 20%, rgba(212, 175, 55, 0.16) 0%, transparent 70%),
+    radial-gradient(50% 50% at 80% 70%, rgba(90, 125, 124, 0.2) 0%, transparent 70%),
+    radial-gradient(70% 70% at 50% 110%, rgba(139, 94, 60, 0.22) 0%, transparent 70%);
+  animation: aurora-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1.05);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(2%, 2%, 0) scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Vinyl record */
+.vinyl-disc {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(circle at 50% 50%, #161616 0%, #050505 62%, #101010 100%);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.vinyl-spin {
+  animation: spin 9s linear infinite;
+}
+
+.vinyl-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-aurora,
+  .vinyl-spin,
+  .animate-bounce,
+  .animate-pulse {
+    animation: none !important;
+  }
+}

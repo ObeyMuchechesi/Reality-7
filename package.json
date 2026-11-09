@@ -1,0 +1,19 @@
+{
+  "name": "reality7-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reality 7 — Is'cathamiya gospel group website with booking system",
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend start",
+    "build": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend start"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3"
+  }
+}
