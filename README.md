@@ -135,8 +135,11 @@ configuration is required there.
 
 ## Content notes
 
-- Photography is placeholder imagery from Unsplash; replace with the group's own
-  photos before launch.
+- Photography comes from the group's own shoot. The web-sized JPEGs live in
+  `frontend/src/assets/images/` and are imported by the components; the raw
+  originals stay in `Assets/` (git-ignored). The hero rotates `hero-1..4.jpg`, the
+  gallery uses `gallery-1..4.jpg` plus two stage shots, and the album cover sits
+  on the vinyl player.
 - Album cards drive a vinyl-style record display; the platform buttons open a
   search for the selected album on Spotify, Apple Music and YouTube. Swap in
   direct album URLs as they become available.

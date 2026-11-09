@@ -7,7 +7,7 @@ import aboutGroup from '../assets/images/about-group.jpg';
 const stats = [
   { icon: Users, value: '6', label: 'Voices' },
   { icon: Award, value: '2007', label: 'Crown Gospel Award' },
-  { icon: BookOpen, value: '4+', label: 'Albums Released' },
+  { icon: BookOpen, value: '5', label: 'Albums Released' },
 ];
 
 const About = () => {
