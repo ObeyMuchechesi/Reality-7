@@ -2,7 +2,18 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Disc3, ExternalLink, Play } from 'lucide-react';
 
+import mangingasukiCover from '../assets/images/album-mangingasuki.jpg';
+
 const albums = [
+  {
+    id: 'mangingasuki',
+    title: 'Mangingasuki (Baba)',
+    year: '',
+    description: 'The newest release — six voices carrying the message forward.',
+    accent: '#D4AF37',
+    glow: 'from-gold/20 to-midnight',
+    cover: mangingasukiCover,
+  },
   {
     id: 'amen',
     title: 'Amen',
@@ -78,7 +89,7 @@ const Music = () => {
           <span className="text-gold tracking-[0.25em] uppercase text-xs font-bold">Discography</span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-cream mt-3">Hear the Harmony</h2>
           <p className="text-cream/50 mt-4 max-w-xl mx-auto">
-            Four records, one message. Stream the music on all major platforms.
+            Five records, one message. Stream the music on all major platforms.
           </p>
         </motion.div>
 
@@ -111,18 +122,32 @@ const Music = () => {
                   />
                   {/* centre label */}
                   <div
-                    className="absolute inset-[31%] rounded-full flex flex-col items-center justify-center text-center px-4 border border-black/40"
-                    style={{
-                      background: `radial-gradient(circle at 30% 25%, ${selected.accent}, #0B132B 78%)`,
-                    }}
+                    className="absolute inset-[31%] rounded-full overflow-hidden flex flex-col items-center justify-center text-center px-4 border border-black/40"
+                    style={
+                      selected.cover
+                        ? undefined
+                        : {
+                            background: `radial-gradient(circle at 30% 25%, ${selected.accent}, #0B132B 78%)`,
+                          }
+                    }
                   >
-                    <Disc3 className="w-4 h-4 text-cream/70 mb-1" aria-hidden="true" />
-                    <p className="font-heading font-bold text-cream text-[10px] sm:text-xs leading-tight">
-                      {selected.title}
-                    </p>
-                    <p className="text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-1">
-                      {selected.year}
-                    </p>
+                    {selected.cover ? (
+                      <img
+                        src={selected.cover}
+                        alt={`${selected.title} cover art`}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    ) : (
+                      <>
+                        <Disc3 className="w-4 h-4 text-cream/70 mb-1" aria-hidden="true" />
+                        <p className="font-heading font-bold text-cream text-[10px] sm:text-xs leading-tight">
+                          {selected.title}
+                        </p>
+                        <p className="text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-1">
+                          {selected.year}
+                        </p>
+                      </>
+                    )}
                   </div>
                   {/* spindle hole */}
                   <div className="absolute inset-[47.5%] rounded-full bg-midnight border border-gold/40" />
@@ -140,7 +165,9 @@ const Music = () => {
 
             {/* Album detail + links */}
             <div>
-              <p className="text-gold text-sm font-semibold mb-1">{selected.year}</p>
+              {selected.year && (
+                <p className="text-gold text-sm font-semibold mb-1">{selected.year}</p>
+              )}
               <h3 className="text-3xl font-heading font-bold text-cream mb-3">{selected.title}</h3>
               <p className="text-cream/60 leading-relaxed mb-6">{selected.description}</p>
 
@@ -190,18 +217,31 @@ const Music = () => {
                 />
                 <div className="relative flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-gold text-sm font-semibold mb-1">{album.year}</p>
+                    {album.year && (
+                      <p className="text-gold text-sm font-semibold mb-1">{album.year}</p>
+                    )}
                     <h3 className="text-xl sm:text-2xl font-heading font-bold text-cream mb-2">{album.title}</h3>
                     <p className="text-cream/60 text-sm max-w-xs">{album.description}</p>
                   </div>
-                  <span
-                    className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isSelected ? 'bg-gold text-midnight' : 'bg-gold/10 text-gold group-hover:bg-gold/20'
-                    }`}
-                    aria-hidden="true"
-                  >
-                    <Disc3 size={22} className={isSelected ? 'vinyl-spin' : ''} />
-                  </span>
+                  {album.cover ? (
+                    <img
+                      src={album.cover}
+                      alt=""
+                      aria-hidden="true"
+                      className={`shrink-0 w-12 h-12 rounded-lg object-cover border transition-all duration-300 ${
+                        isSelected ? 'border-gold/70 shadow-lg shadow-gold/20' : 'border-gold/20'
+                      }`}
+                    />
+                  ) : (
+                    <span
+                      className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isSelected ? 'bg-gold text-midnight' : 'bg-gold/10 text-gold group-hover:bg-gold/20'
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <Disc3 size={22} className={isSelected ? 'vinyl-spin' : ''} />
+                    </span>
+                  )}
                 </div>
               </motion.button>
             );

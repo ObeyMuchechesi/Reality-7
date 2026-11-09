@@ -7,6 +7,9 @@ frontend/node_modules/
 frontend/build/
 build/
 
+# Raw source photos (web-optimised copies live in frontend/src/assets/images)
+/Assets/
+
 # Environment
 .env
 .env.*

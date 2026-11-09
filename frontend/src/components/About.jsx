@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Award, Users, BookOpen } from 'lucide-react';
 
+import aboutGroup from '../assets/images/about-group.jpg';
+
 const stats = [
   { icon: Users, value: '6', label: 'Voices' },
   { icon: Award, value: '2007', label: 'Crown Gospel Award' },
@@ -39,12 +41,13 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-gold/20 relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent z-10" />
               <img
-                src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80"
-                alt="A cappella singers performing together on stage"
+                src={aboutGroup}
+                alt="The six members of Reality 7 in matching dark suits"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 scale-105 hover:scale-100"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-gold text-midnight p-6 rounded-2xl shadow-xl">

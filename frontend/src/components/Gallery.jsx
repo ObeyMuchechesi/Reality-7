@@ -1,13 +1,20 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
+import gallery1 from '../assets/images/gallery-1.jpg';
+import gallery2 from '../assets/images/gallery-2.jpg';
+import gallery3 from '../assets/images/gallery-3.jpg';
+import gallery4 from '../assets/images/gallery-4.jpg';
+import stageWide from '../assets/images/hero-1.jpg';
+import stageLineup from '../assets/images/hero-4.jpg';
+
 const images = [
-  { src: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80', alt: 'Choir singing together' },
-  { src: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80', alt: 'Concert stage' },
-  { src: 'https://images.unsplash.com/photo-1524650359799-842906ca1c06?w=600&q=80', alt: 'Gospel singers' },
-  { src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80', alt: 'Microphone' },
-  { src: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80', alt: 'Sheet music' },
-  { src: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80', alt: 'Live performance' },
+  { src: gallery1, alt: 'Two members of Reality 7 sharing a microphone mid-song' },
+  { src: gallery2, alt: 'Reality 7 singing in close harmony on stage' },
+  { src: gallery3, alt: 'The full lineup holding microphones in a row' },
+  { src: gallery4, alt: 'Reality 7 singing beside the lectern at a church service' },
+  { src: stageWide, alt: 'Reality 7 on stage beneath an event banner' },
+  { src: stageLineup, alt: 'The group in suits during an evening programme' },
 ];
 
 const Gallery = () => {
