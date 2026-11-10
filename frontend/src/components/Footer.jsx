@@ -1,5 +1,7 @@
 import React from 'react';
-import { Music, Facebook, Instagram, Youtube, Mail } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail } from 'lucide-react';
+
+import logo from '../assets/images/logo-reality7.png';
 
 const socials = [
   { icon: Facebook, label: 'Facebook', href: '#' },
@@ -13,9 +15,8 @@ const Footer = () => {
     <footer className="bg-midnight border-t border-gold/10 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <a href="#home" className="flex items-center gap-3">
-            <Music className="text-gold w-7 h-7" aria-hidden="true" />
-            <span className="text-xl font-heading font-bold text-gold tracking-wider">REALITY 7</span>
+          <a href="#home" className="flex items-center" aria-label="Reality 7 — back to top">
+            <img src={logo} alt="Reality 7" width="900" height="292" className="h-12 w-auto" />
           </a>
 
           <div className="flex items-center gap-6">

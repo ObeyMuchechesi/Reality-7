@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Music } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+
+import logo from '../assets/images/logo-reality7.png';
 
 const links = [
   { name: 'Home', href: '#home' },
@@ -29,11 +31,14 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#home" className="flex items-center gap-3">
-            <Music className="text-gold w-8 h-8" aria-hidden="true" />
-            <span className="text-2xl font-heading font-bold text-gold tracking-wider">
-              REALITY 7
-            </span>
+          <a href="#home" className="flex items-center" aria-label="Reality 7 — back to top">
+            <img
+              src={logo}
+              alt="Reality 7"
+              width="900"
+              height="292"
+              className="h-10 sm:h-12 w-auto"
+            />
           </a>
 
           {/* Desktop */}
