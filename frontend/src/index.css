@@ -5,10 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     @apply bg-midnight text-cream font-body antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
   }
 
   h1,
@@ -38,29 +40,103 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-midnight;
+  @apply bg-midnight-deep;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-gold rounded-full;
+  background: linear-gradient(180deg, #fac959, #b8862b);
+  border-radius: 9999px;
 }
 
-/* Zulu beadwork-inspired divider */
+@layer components {
+  /* Small caps label that opens every section */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[10.5px] font-semibold uppercase tracking-label text-gold-light;
+  }
+
+  .eyebrow-rule {
+    @apply h-px w-8 bg-gradient-to-r from-transparent via-gold/60 to-gold/0;
+  }
+
+  .section-title {
+    @apply font-heading text-[2.1rem] font-bold leading-[1.08] text-cream sm:text-5xl md:text-[3.4rem];
+  }
+
+  /* Foil treatment sampled from the gold "7" in the logo */
+  .gold-text {
+    background-image: linear-gradient(
+      100deg,
+      #b8862b 0%,
+      #efbc4c 16%,
+      #ffe9b0 34%,
+      #fac959 52%,
+      #c08f2b 74%,
+      #f0c25a 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold/25 to-transparent;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-midnight shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-18px_rgba(239,188,76,0.75)];
+    background-image: linear-gradient(135deg, #fac959 0%, #efbc4c 46%, #c8952f 100%);
+  }
+
+  .btn-gold:hover {
+    background-image: linear-gradient(135deg, #ffd97a 0%, #f6c65a 46%, #d3a038 100%);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-cream/25 px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-cream/85 backdrop-blur-sm transition-all duration-300 hover:border-gold/70 hover:text-gold-light;
+  }
+
+  .nav-link {
+    @apply relative text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/70 transition-colors duration-300 hover:text-cream;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    height: 1px;
+    width: 0;
+    background: linear-gradient(90deg, #fac959, rgba(239, 188, 76, 0));
+    transition: width 0.35s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .surface {
+    @apply rounded-[1.75rem] border border-white/10 bg-white/[0.035] backdrop-blur-sm;
+  }
+
+  .photo-frame {
+    @apply relative overflow-hidden rounded-[1.75rem] border border-gold/25 shadow-plate;
+  }
+}
+
+/* Zulu beadwork-inspired lattice divider */
 .zulu-divider {
-  height: 6px;
-  background: repeating-linear-gradient(
-    90deg,
-    #d4af37,
-    #d4af37 20px,
-    #0b132b 20px,
-    #0b132b 40px
-  );
+  height: 9px;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(239, 188, 76, 0.75) 0 1.5px, transparent 1.5px 14px),
+    repeating-linear-gradient(-45deg, rgba(239, 188, 76, 0.75) 0 1.5px, transparent 1.5px 14px),
+    linear-gradient(90deg, transparent 0%, rgba(239, 188, 76, 0.22) 50%, transparent 100%);
 }
 
-/* Geometric beadwork texture used behind section headings */
+/* Geometric beadwork texture used behind dark panels */
 .zulu-pattern {
   background-image:
-    linear-gradient(135deg, rgba(212, 175, 55, 0.14) 25%, transparent 25%),
-    linear-gradient(225deg, rgba(212, 175, 55, 0.14) 25%, transparent 25%),
+    linear-gradient(135deg, rgba(239, 188, 76, 0.14) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(239, 188, 76, 0.14) 25%, transparent 25%),
     linear-gradient(45deg, rgba(90, 125, 124, 0.12) 25%, transparent 25%),
     linear-gradient(315deg, rgba(90, 125, 124, 0.12) 25%, transparent 25%);
   background-position:
@@ -75,9 +151,9 @@
 /* Hero ambience: slow-drifting gradient light */
 .hero-aurora {
   background:
-    radial-gradient(60% 60% at 20% 20%, rgba(212, 175, 55, 0.16) 0%, transparent 70%),
-    radial-gradient(50% 50% at 80% 70%, rgba(90, 125, 124, 0.2) 0%, transparent 70%),
-    radial-gradient(70% 70% at 50% 110%, rgba(139, 94, 60, 0.22) 0%, transparent 70%);
+    radial-gradient(60% 60% at 18% 18%, rgba(239, 188, 76, 0.18) 0%, transparent 70%),
+    radial-gradient(50% 50% at 82% 72%, rgba(90, 125, 124, 0.22) 0%, transparent 70%),
+    radial-gradient(70% 70% at 50% 110%, rgba(139, 94, 60, 0.24) 0%, transparent 70%);
   animation: aurora-drift 18s ease-in-out infinite alternate;
 }
 

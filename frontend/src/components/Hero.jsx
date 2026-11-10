@@ -65,7 +65,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-midnight"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-midnight"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -99,46 +99,61 @@ const Hero = () => {
 
       {/* Legibility + brand overlays */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-midnight/95 via-midnight/70 to-midnight"
+        className="absolute inset-0 bg-gradient-to-b from-midnight/90 via-midnight/55 to-midnight"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-midnight/25" aria-hidden="true" />
-      <div className="absolute inset-0 hero-aurora opacity-70" aria-hidden="true" />
-      <div className="absolute inset-0 opacity-[0.05] zulu-pattern" aria-hidden="true" />
+      <div className="absolute inset-0 bg-midnight/20" aria-hidden="true" />
+      <div className="absolute inset-0 hero-aurora opacity-60" aria-hidden="true" />
+      <div className="absolute inset-0 zulu-pattern opacity-[0.04]" aria-hidden="true" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-24 pb-36">
+      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-36 pt-32 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-gold tracking-[0.3em] uppercase text-xs sm:text-sm mb-6 font-semibold"
+          transition={{ duration: 0.9 }}
+          className="eyebrow justify-center"
         >
-          Est. 1992 · KwaZulu-Natal, South Africa
+          <span className="eyebrow-rule rotate-180" />
+          Est. 1992 · KwaZulu-Natal
+          <span className="eyebrow-rule" />
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-8xl font-heading font-black text-cream mb-6 leading-tight"
+          transition={{ duration: 1, delay: 0.15 }}
+          className="mt-7 font-heading text-[clamp(3.6rem,13vw,8.5rem)] font-bold leading-[0.95] tracking-[-0.01em] text-cream"
         >
-          REALITY <span className="text-gold">7</span>
+          Reality <span className="gold-text">7</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-cream/80 font-light max-w-2xl mx-auto mb-4"
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0.4 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 1, delay: 0.35 }}
+          className="mx-auto mt-8 flex max-w-xs items-center gap-3"
+          aria-hidden="true"
         >
-          Six voices. One Spirit. The definitive sound of a grand new dawn.
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/50" />
+          <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/50" />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.45 }}
+          className="mx-auto mt-7 max-w-2xl text-balance text-base font-light leading-relaxed text-cream/70 sm:text-lg"
+        >
+          Six voices. One Spirit.{' '}
+          <span className="text-cream">The definitive sound of a grand new dawn.</span>
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-sm text-cream/50 mb-12 italic"
+          transition={{ duration: 0.9, delay: 0.65 }}
+          className="mx-auto mt-5 max-w-xl font-heading text-sm italic text-cream/45 sm:text-base"
         >
           &ldquo;Where two or three are gathered... there am I in the midst.&rdquo; — Matthew 18:20
         </motion.p>
@@ -146,20 +161,14 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          transition={{ duration: 0.9, delay: 0.8 }}
+          className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
-          <a
-            href="#music"
-            className="px-8 py-4 bg-gold text-midnight font-bold rounded-full hover:bg-gold/90 transition-all duration-300 shadow-xl shadow-gold/25 hover:shadow-gold/40 hover:-translate-y-0.5"
-          >
-            Listen to Our Music
+          <a href="#music" className="btn-gold w-full sm:w-auto">
+            Listen to our music
           </a>
-          <a
-            href="#booking"
-            className="px-8 py-4 border-2 border-cream/40 text-cream font-semibold rounded-full hover:border-gold hover:text-gold transition-all duration-300"
-          >
-            Book a Performance
+          <a href="#booking" className="btn-ghost w-full sm:w-auto">
+            Book a performance
           </a>
         </motion.div>
       </div>
@@ -169,20 +178,20 @@ const Hero = () => {
         type="button"
         onClick={() => goTo(index - 1)}
         aria-label="Previous photo"
-        className="hidden sm:grid place-items-center absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border border-cream/25 bg-midnight/40 text-cream/80 backdrop-blur-sm hover:text-gold hover:border-gold/60 transition-colors"
+        className="absolute left-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-cream/20 bg-midnight/40 text-cream/70 backdrop-blur-sm transition-colors hover:border-gold/60 hover:text-gold sm:grid md:left-8"
       >
-        <ChevronLeft size={22} aria-hidden="true" />
+        <ChevronLeft size={20} aria-hidden="true" />
       </button>
       <button
         type="button"
         onClick={() => goTo(index + 1)}
         aria-label="Next photo"
-        className="hidden sm:grid place-items-center absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full border border-cream/25 bg-midnight/40 text-cream/80 backdrop-blur-sm hover:text-gold hover:border-gold/60 transition-colors"
+        className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-cream/20 bg-midnight/40 text-cream/70 backdrop-blur-sm transition-colors hover:border-gold/60 hover:text-gold sm:grid md:right-8"
       >
-        <ChevronRight size={22} aria-hidden="true" />
+        <ChevronRight size={20} aria-hidden="true" />
       </button>
 
-      <div className="absolute inset-x-0 bottom-16 z-20 flex items-center justify-center gap-4">
+      <div className="absolute inset-x-0 bottom-14 z-20 flex items-center justify-center gap-5">
         <div className="flex items-center gap-2" role="tablist" aria-label="Hero photos">
           {slides.map((slide, idx) => (
             <button
@@ -192,20 +201,27 @@ const Hero = () => {
               aria-selected={idx === index}
               aria-label={`Show photo ${idx + 1} of ${slides.length}`}
               onClick={() => goTo(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === index ? 'w-8 bg-gold' : 'w-2 bg-cream/40 hover:bg-cream/70'
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                idx === index ? 'w-9 bg-gold' : 'w-1.5 bg-cream/35 hover:bg-cream/60'
               }`}
             />
           ))}
         </div>
+
+        <span className="font-body text-[10px] uppercase tracking-[0.25em] text-cream/40 tabular-nums">
+          {String(index + 1).padStart(2, '0')}
+          <span className="mx-1 text-cream/20">/</span>
+          {String(slides.length).padStart(2, '0')}
+        </span>
+
         <button
           type="button"
           onClick={() => setUserPaused((current) => !current)}
           aria-pressed={userPaused}
           aria-label={userPaused ? 'Play slideshow' : 'Pause slideshow'}
-          className="grid place-items-center h-8 w-8 rounded-full border border-cream/25 text-cream/70 hover:text-gold hover:border-gold/60 transition-colors"
+          className="grid h-8 w-8 place-items-center rounded-full border border-cream/20 text-cream/60 transition-colors hover:border-gold/60 hover:text-gold"
         >
-          {userPaused ? <Play size={13} aria-hidden="true" /> : <Pause size={13} aria-hidden="true" />}
+          {userPaused ? <Play size={12} aria-hidden="true" /> : <Pause size={12} aria-hidden="true" />}
         </button>
       </div>
 
@@ -214,10 +230,10 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 text-cream/50 hover:text-gold transition-colors animate-bounce"
+        className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 text-cream/40 transition-colors hover:text-gold-light"
         aria-label="Scroll to the About section"
       >
-        <ChevronDown size={26} />
+        <ChevronDown size={22} className="animate-bounce" />
       </motion.a>
     </section>
   );

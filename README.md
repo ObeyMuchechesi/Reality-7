@@ -14,14 +14,18 @@ MongoDB booking API.
 | Token | Value | Use |
 | --- | --- | --- |
 | Midnight | `#0B132B` | Page background, depth |
-| Gold | `#D4AF37` | Accents, headings, CTAs |
+| Gold | `#EFBC4C` | Accents, headings, CTAs (sampled from the wordmark) |
+| Gold light / bright / deep | `#FAC959` / `#FFE9B0` / `#C08F2B` | Foil gradients, hover states |
 | Cream | `#F4F1DE` | Body copy |
 | Earth | `#8B5E3C` | Warm gradient washes |
 | Sage | `#5A7D7C` | Cool gradient washes |
 
-Cinzel for headings, Inter for body text. The Zulu beadwork motif appears as a
-repeating divider (`.zulu-divider`) between sections and as a low-opacity
-geometric texture (`.zulu-pattern`) behind the hero.
+Playfair Display for headings, Manrope for body and interface text. The gold
+scale was sampled from the yellow-gold "7" in the group's logo, so buttons,
+the `.gold-text` foil treatment and accents all share the brand hue. The Zulu
+beadwork motif appears as a repeating lattice divider (`.zulu-divider`) between
+sections and as a low-opacity geometric texture (`.zulu-pattern`) behind the
+hero.
 
 ## Project structure
 

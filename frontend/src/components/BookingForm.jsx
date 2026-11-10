@@ -51,10 +51,10 @@ const BookingForm = () => {
   };
 
   const inputClass =
-    'w-full px-4 py-3 bg-cream/5 border border-gold/20 rounded-xl text-cream placeholder-cream/30 focus:outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-all duration-200';
+    'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-cream placeholder:text-cream/25 transition-all duration-200 focus:border-gold/60 focus:outline-none focus:ring-1 focus:ring-gold/25';
 
   return (
-    <section id="booking" className="py-24 px-4 bg-midnight relative" ref={ref}>
+    <section id="booking" className="relative bg-midnight-deep px-4 py-24 sm:py-28" ref={ref}>
       <div className="zulu-divider absolute top-0 left-0 right-0" aria-hidden="true" />
 
       <div className="max-w-3xl mx-auto">
@@ -64,9 +64,13 @@ const BookingForm = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-gold tracking-[0.25em] uppercase text-xs font-bold">Invite Us</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-cream mt-3">Book Reality 7</h2>
-          <p className="text-cream/50 mt-4 max-w-lg mx-auto">
+          <span className="eyebrow justify-center">
+            <span className="eyebrow-rule rotate-180" />
+            Invite us
+            <span className="eyebrow-rule" />
+          </span>
+          <h2 className="section-title mt-5">Book Reality 7</h2>
+          <p className="mx-auto mt-5 max-w-lg text-cream/55">
             Bring the ministry of Reality 7 to your church, concert, or event. Fill out the form below and
             we&apos;ll be in touch.
           </p>
@@ -77,11 +81,11 @@ const BookingForm = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="space-y-5 p-6 sm:p-8 bg-cream/[0.03] rounded-3xl border border-gold/10"
+          className="surface space-y-5 p-6 sm:p-9"
         >
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="name" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Full Name *
               </label>
               <input
@@ -98,7 +102,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="email" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Email *
               </label>
               <input
@@ -117,7 +121,7 @@ const BookingForm = () => {
 
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="phone" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Phone *
               </label>
               <input
@@ -134,7 +138,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="eventType" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="eventType" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Event Type *
               </label>
               <select
@@ -155,7 +159,7 @@ const BookingForm = () => {
 
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="eventDate" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="eventDate" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Event Date *
               </label>
               <input
@@ -170,7 +174,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="location" className="block text-sm font-medium text-cream/70 mb-2">
+              <label htmlFor="location" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                 Location *
               </label>
               <input
@@ -188,7 +192,7 @@ const BookingForm = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-cream/70 mb-2">
+            <label htmlFor="message" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
               Message
             </label>
             <textarea
@@ -206,7 +210,7 @@ const BookingForm = () => {
           {status === 'success' && (
             <div
               role="status"
-              className="flex items-center gap-2 text-green-400 text-sm bg-green-500/10 p-4 rounded-xl"
+              className="flex items-center gap-2 rounded-xl border border-green-400/20 bg-green-400/[0.08] p-4 text-sm text-green-300"
             >
               <CheckCircle size={18} aria-hidden="true" /> Booking request sent successfully! We&apos;ll be in
               touch.
@@ -215,7 +219,7 @@ const BookingForm = () => {
           {status === 'error' && (
             <div
               role="alert"
-              className="flex items-center gap-2 text-red-400 text-sm bg-red-500/10 p-4 rounded-xl"
+              className="flex items-center gap-2 rounded-xl border border-red-400/20 bg-red-400/[0.08] p-4 text-sm text-red-300"
             >
               <AlertCircle size={18} aria-hidden="true" /> {errorMessage}
             </div>
@@ -224,7 +228,7 @@ const BookingForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gold text-midnight font-bold rounded-xl hover:bg-gold/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-gold/20"
+            className="btn-gold w-full py-4 text-[11px] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? (
               'Sending...'

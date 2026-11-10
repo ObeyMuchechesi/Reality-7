@@ -22,37 +22,51 @@ const Gallery = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="gallery" className="py-24 px-4 bg-gradient-to-b from-midnight to-midnight/95" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="gallery"
+      className="relative bg-gradient-to-b from-midnight to-midnight-deep px-4 py-24 sm:py-28"
+      ref={ref}
+    >
+      <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 36 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.9 }}
+          className="mb-14 text-center"
         >
-          <span className="text-gold tracking-[0.25em] uppercase text-xs font-bold">Moments</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-cream mt-3">
-            In His Presence
-          </h2>
+          <span className="eyebrow justify-center">
+            <span className="eyebrow-rule rotate-180" />
+            Moments
+            <span className="eyebrow-rule" />
+          </span>
+          <h2 className="section-title mt-5">In His Presence</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-3.5 md:grid-cols-3 md:gap-4">
           {images.map((img, idx) => (
-            <motion.div
+            <motion.figure
               key={img.src}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative aspect-square rounded-xl overflow-hidden border border-gold/10"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: idx * 0.08 }}
+              className="group relative aspect-square overflow-hidden rounded-xl border border-white/[0.08] transition-colors duration-500 hover:border-gold/40"
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                decoding="async"
+                className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.08]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.div>
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-midnight/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                aria-hidden="true"
+              />
+              <span
+                className="pointer-events-none absolute inset-2 rounded-lg border border-gold/0 transition-colors duration-500 group-hover:border-gold/30"
+                aria-hidden="true"
+              />
+            </motion.figure>
           ))}
         </div>
       </div>
