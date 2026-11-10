@@ -85,7 +85,7 @@ const BookingForm = () => {
         >
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="name" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="name" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Full Name *
               </label>
               <input
@@ -102,7 +102,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="email" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Email *
               </label>
               <input
@@ -121,7 +121,7 @@ const BookingForm = () => {
 
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="phone" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="phone" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Phone *
               </label>
               <input
@@ -138,7 +138,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="eventType" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="eventType" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Event Type *
               </label>
               <select
@@ -159,7 +159,7 @@ const BookingForm = () => {
 
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="eventDate" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="eventDate" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Event Date *
               </label>
               <input
@@ -174,7 +174,7 @@ const BookingForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="location" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+              <label htmlFor="location" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
                 Location *
               </label>
               <input
@@ -192,7 +192,7 @@ const BookingForm = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
+            <label htmlFor="message" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/55">
               Message
             </label>
             <textarea

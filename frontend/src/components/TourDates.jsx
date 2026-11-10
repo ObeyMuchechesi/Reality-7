@@ -69,7 +69,7 @@ const TourDates = () => {
                   <div className="flex items-center gap-5">
                     <div className="w-16 shrink-0 border-r border-white/10 pr-5 text-center">
                       <p className="font-heading text-3xl font-bold leading-none text-gold-light">{day}</p>
-                      <p className="mt-1.5 text-[9px] uppercase tracking-[0.18em] text-cream/45">
+                      <p className="mt-1.5 text-[9px] uppercase tracking-[0.18em] text-cream/55">
                         {month} {year}
                       </p>
                     </div>
@@ -77,7 +77,7 @@ const TourDates = () => {
                       <h3 className="font-heading text-lg font-bold leading-snug text-cream transition-colors group-hover:text-gold-light sm:text-xl">
                         {show.event}
                       </h3>
-                      <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-cream/45">
+                      <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-cream/60">
                         <span className="flex items-center gap-1.5">
                           <MapPin size={13} aria-hidden="true" /> {show.venue}
                         </span>

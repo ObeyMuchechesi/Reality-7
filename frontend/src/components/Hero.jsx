@@ -153,7 +153,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.65 }}
-          className="mx-auto mt-5 max-w-xl font-heading text-sm italic text-cream/45 sm:text-base"
+          className="mx-auto mt-5 max-w-xl font-heading text-sm italic text-cream/55 sm:text-base"
         >
           &ldquo;Where two or three are gathered... there am I in the midst.&rdquo; — Matthew 18:20
         </motion.p>
@@ -208,9 +208,9 @@ const Hero = () => {
           ))}
         </div>
 
-        <span className="font-body text-[10px] uppercase tracking-[0.25em] text-cream/40 tabular-nums">
+        <span className="font-body text-[10px] uppercase tracking-[0.25em] text-cream/55 tabular-nums">
           {String(index + 1).padStart(2, '0')}
-          <span className="mx-1 text-cream/20">/</span>
+          <span className="mx-1 text-cream/35">/</span>
           {String(slides.length).padStart(2, '0')}
         </span>
 

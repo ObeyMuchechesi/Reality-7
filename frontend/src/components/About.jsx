@@ -108,7 +108,7 @@ const About = () => {
                     <p className="font-heading text-2xl font-bold text-gold-light sm:text-3xl">
                       {stat.value}
                     </p>
-                    <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-cream/45 sm:text-[10px]">
+                    <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-cream/55 sm:text-[10px]">
                       {stat.label}
                     </p>
                   </motion.div>

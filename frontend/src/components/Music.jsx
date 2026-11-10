@@ -163,7 +163,7 @@ const Music = () => {
                   <div className="absolute -bottom-2 -left-[3px] h-4 w-3 rounded-sm bg-gold" />
                 </div>
               </div>
-              <p className="mt-4 text-center text-[9px] uppercase tracking-[0.3em] text-cream/35">
+              <p className="mt-4 text-center text-[9px] uppercase tracking-[0.3em] text-cream/50">
                 Now in rotation
               </p>
             </div>
@@ -195,7 +195,7 @@ const Music = () => {
                 ))}
               </div>
 
-              <p className="mt-4 flex items-center gap-1.5 text-[11px] text-cream/30">
+              <p className="mt-4 flex items-center gap-1.5 text-[11px] text-cream/45">
                 <ExternalLink size={11} aria-hidden="true" /> Opens {selected.title} on the selected platform
               </p>
             </div>
@@ -241,7 +241,7 @@ const Music = () => {
                     <h3 className="mb-2 font-heading text-xl font-bold text-cream sm:text-2xl">
                       {album.title}
                     </h3>
-                    <p className="max-w-xs text-sm leading-relaxed text-cream/55">{album.description}</p>
+                    <p className="max-w-xs text-sm leading-relaxed text-cream/60">{album.description}</p>
                   </div>
                   {album.cover ? (
                     <img

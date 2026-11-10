@@ -28,7 +28,7 @@ const Footer = () => {
             <a href="#home" className="inline-flex" aria-label="Reality 7 — back to top">
               <img src={logo} alt="Reality 7" width="900" height="292" className="h-12 w-auto" />
             </a>
-            <p className="mt-4 font-heading text-sm italic text-cream/45">
+            <p className="mt-4 font-heading text-sm italic text-cream/55">
               &ldquo;Six voices, one Spirit.&rdquo;
             </p>
           </div>
@@ -38,7 +38,7 @@ const Footer = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cream/45 transition-colors hover:text-gold-light"
+                className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cream/55 transition-colors hover:text-gold-light"
               >
                 {link.name}
               </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-cream/50 transition-all duration-300 hover:border-gold/50 hover:text-gold-light"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-cream/60 transition-all duration-300 hover:border-gold/50 hover:text-gold-light"
               >
                 <Icon size={17} aria-hidden="true" />
               </a>
@@ -61,7 +61,7 @@ const Footer = () => {
 
         <div className="hairline my-9" aria-hidden="true" />
 
-        <div className="flex flex-col items-center justify-between gap-3 text-[10px] uppercase tracking-[0.18em] text-cream/25 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 text-[10px] uppercase tracking-[0.18em] text-cream/45 sm:flex-row">
           <p>© {new Date().getFullYear()} Reality 7. All rights reserved.</p>
           <p>Is&apos;cathamiya · KwaZulu-Natal, South Africa</p>
         </div>
